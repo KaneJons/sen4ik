@@ -26,8 +26,8 @@ namespace sen4ik.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=shop" +
-            ";uid=postgres;pwd=halo12345")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=post" +
+            "gres;uid=postgres;pwd=123")]
         public string shopConnectionString {
             get {
                 return ((string)(this["shopConnectionString"]));
@@ -36,7 +36,7 @@ namespace sen4ik.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Host=localhost;Port=5432;Database=shop;Username=postgres;Password=halo12345")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=123")]
         public string DBConnection {
             get {
                 return ((string)(this["DBConnection"]));

@@ -5,13 +5,13 @@
     <Setting Name="shopConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=shop;uid=postgres;pwd=halo12345&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=postgres;uid=postgres;pwd=123&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=shop;uid=postgres;pwd=halo12345</Value>
+      <Value Profile="(Default)">Driver={PostgreSQL ODBC Driver(UNICODE)};server=127.0.0.1;port=5432;database=postgres;uid=postgres;pwd=123</Value>
     </Setting>
     <Setting Name="DBConnection" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Host=localhost;Port=5432;Database=shop;Username=postgres;Password=halo12345</Value>
+      <Value Profile="(Default)">Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -125,7 +125,34 @@ namespace sen4ik
 
         private void button1_Click(object sender, EventArgs e)
         {
+            switch (CurrentTable)
+            {
+                case TypeTable.Clients:
+                    AddClients addClients = new AddClients();
+                    addClients.ShowDialog();
+                    break;
+                case TypeTable.Services:
+                    AddService addService = new AddService();
+                    addService.ShowDialog();
+                    break;
+                case TypeTable.Employees:
+                    AddEmployees addEmployees = new AddEmployees();
+                    addEmployees.ShowDialog();
+                    break;
+                case TypeTable.CashRegister:
+                    AddCashRegister addCashRegister = new AddCashRegister();
+                    addCashRegister.ShowDialog();
+                    break;
+                case TypeTable.Users:
+                    AddUsers addUsers = new AddUsers();
+                    addUsers.ShowDialog();
+                    break;
+                default:
+                    break;
 
+            }
+
+            ReloadData();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -282,7 +309,21 @@ namespace sen4ik
                 if (value == null || value == DBNull.Value)
                     return false;
 
-                string referenceTable = NameTableLabel[CurrentTable];
+               string referenceTable = "";
+                switch(columnName)
+                {
+                    case "client_id":
+                        referenceTable = "clients";
+                            break;
+                    case "service_id":
+                        referenceTable = "services";
+                        break;
+                    case "employee_id":
+                        referenceTable = "employees";
+                        break;
+                    default:
+                        break;
+                };
 
 
                 if (string.IsNullOrEmpty(referenceTable))
@@ -311,6 +352,11 @@ namespace sen4ik
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             OldCurrentTable = CurrentTable;
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

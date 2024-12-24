@@ -98,6 +98,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCashRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCashRegister.Designer.cs">
+      <DependentUpon>AddCashRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClients.Designer.cs">
+      <DependentUpon>AddClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployees.Designer.cs">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUsers.Designer.cs">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +147,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>shopDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCashRegister.resx">
+      <DependentUpon>AddCashRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClients.resx">
+      <DependentUpon>AddClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployees.resx">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUsers.resx">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

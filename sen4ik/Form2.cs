@@ -2,6 +2,7 @@
 using sen4ik.shopDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace sen4ik
@@ -358,5 +359,64 @@ namespace sen4ik
         {
             Application.Exit();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(filterText))
+            {
+                ReloadData(); // Если поле пустое, загружаем данные снова.
+                ApplyFilter(filterText);
+                return;
+            }
+
+            // Создаем фильтр
+            string filterExpression = BuildFilterExpression(filterText);
+
+            // Применяем фильтр к текущей таблице
+            ApplyFilter(filterExpression);
+        }
+
+        private string BuildFilterExpression(string filterText)
+        {
+            // Проверяем, есть ли данные в DataGridView
+            if (dataGridView1.DataSource is BindingSource bindingSource)
+            {
+                var table = ((DataTable)bindingSource.DataSource);
+                var columnFilters = new List<string>();
+
+                foreach (DataColumn column in table.Columns)
+                {
+                    if (column.DataType == typeof(string))
+                    {
+                        columnFilters.Add($"{column.ColumnName} LIKE '%{filterText}%'");
+                    }
+                    else if (column.DataType == typeof(int) || column.DataType == typeof(decimal))
+                    {
+                        if (int.TryParse(filterText, out _))
+                        {
+                            columnFilters.Add($"{column.ColumnName} = {filterText}");
+                        }
+                    }
+                }
+
+                return string.Join(" OR ", columnFilters);
+            }
+
+            return string.Empty;
+        }
+        private void ApplyFilter(string filterExpression)
+        {
+            if (dataGridView1.DataSource is BindingSource bindingSource)
+            {
+                if (bindingSource.DataSource is DataTable table)
+                {
+                    table.DefaultView.RowFilter = filterExpression;
+                }
+            }
+        }
+
+
     }
 }
